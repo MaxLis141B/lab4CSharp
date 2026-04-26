@@ -26,7 +26,6 @@
         Console.WriteLine("Відновлений з рядка:");
         parsed.PrintSides();
 
-
         ATriangle[] array = {
                 new ATriangle(5, 5, 10),
                 new ATriangle(3, 4, 20),
@@ -39,10 +38,10 @@
 
         Console.WriteLine($"\nКількість рівнобедрених у масиві: {count}");
     }
+
     static void task2()
     {
-
-        VectorDouble v1 = new VectorDouble(3, 2.5); 
+        VectorDouble v1 = new VectorDouble(3, 2.5);
         VectorDouble v2 = new VectorDouble(3);
 
         v2[0] = 1.0;
@@ -74,16 +73,13 @@
 
     static void task3()
     {
-
-        MatrixDouble m1 = new MatrixDouble(2, 2, 3.0); 
+        MatrixDouble m1 = new MatrixDouble(2, 2, 3.0);
         MatrixDouble m2 = new MatrixDouble(2, 2);
 
         m2[0, 0] = 1.0;
         m2[0, 1] = 2.0;
-
-   
-        m2[2] = 3.0; 
-        m2[3] = 4.0; 
+        m2[2] = 3.0;
+        m2[3] = 4.0;
 
         Console.WriteLine("Матриця 1 (заповнена 3.0):");
         m1.Output();
@@ -116,24 +112,16 @@
 
     static void task4()
     {
-        Patient[] patients =
-        {
-            new Patient("Іваненко Іван Іванович", "м. Львів", "MC-100", "POL-900"),
-            new Patient("Петренко Петро Петрович", "м. Київ", "MC-101", "POL-901"),
-            new Patient("Сидоренко Сидір Сидорович", "м. Дніпро", "MC-102", "POL-902")
-        };
+            Console.WriteLine("=== ВАРІАНТ 1: КЛАСИ (Struct-like) ===");
+            RunClassVariant();
 
-        patients = PatientArrayUtils.RemoveByMedicalCard(patients, "MC-101");
-        patients = PatientArrayUtils.AddTwoToStart(
-            patients,
-            new Patient("Новий Пацієнт 1", "м. Одеса", "MC-200", "POL-990"),
-            new Patient("Новий Пацієнт 2", "м. Харків", "MC-201", "POL-991"));
+            Console.WriteLine("\n=== ВАРІАНТ 2: КОРТЕЖІ (Tuples) ===");
+            RunTupleVariant();
 
-        Console.WriteLine("Тест структури Patient:");
-        foreach (Patient p in patients)
-        {
-            Console.WriteLine(p);
-        }
+            Console.WriteLine("\n=== ВАРІАНТ 3: ЗАПИСИ (Records) ===");
+            RunRecordVariant();
+
+            Console.ReadKey();
     }
 
     static void Main(string[] args)
