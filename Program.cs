@@ -112,16 +112,17 @@
 
     static void task4()
     {
-            Console.WriteLine("=== ВАРІАНТ 1: КЛАСИ (Struct-like) ===");
-            RunClassVariant();
+        Console.WriteLine("=== ВАРІАНТ 1: КЛАСИ ===");
+        PatientManagement.PatientTask.RunClassVariant();
 
-            Console.WriteLine("\n=== ВАРІАНТ 2: КОРТЕЖІ (Tuples) ===");
-            RunTupleVariant();
+        Console.WriteLine("\n=== ВАРІАНТ 2: КОРТЕЖІ ===");
+        PatientManagement.PatientTask.RunTupleVariant();
 
-            Console.WriteLine("\n=== ВАРІАНТ 3: ЗАПИСИ (Records) ===");
-            RunRecordVariant();
+        Console.WriteLine("\n=== ВАРІАНТ 3: ЗАПИСИ ===");
+        PatientManagement.PatientTask.RunRecordVariant();
 
-            Console.ReadKey();
+        Console.WriteLine("\n=== ВАРІАНТ 4: СТРУКТУРИ ===");
+        PatientManagement.PatientTask.RunStructVariant();
     }
 
     static void Main(string[] args)
